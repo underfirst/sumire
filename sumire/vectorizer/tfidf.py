@@ -1,6 +1,6 @@
 import pickle
 from pathlib import Path
-from typing import Union, Optional, List, Tuple
+from typing import List, Optional, Tuple, Union
 
 from sklearn.feature_extraction import text
 
@@ -29,12 +29,21 @@ class TfidfVectorizer(SkLearnVectorizerBase):
 
         Args:
             tokenizer: The tokenizer to use for tokenization.
-            lowercase (bool, optional): Whether to convert all characters to lowercase before tokenization. Defaults to True.
-            stop_words (str, List[str], or None, optional): The stop words to use for filtering tokens. Defaults to None.
-            ngram_range (tuple, optional): The range of n-grams to extract as features. Defaults to (1, 1) (i.e., only unigrams).
-            max_df (float or int, optional): The maximum document frequency for a token to be included in the vocabulary. Can be a float in the range [0.0, 1.0] or an integer. Defaults to 1.0 (i.e., no filtering).
-            min_df (float or int, optional): The minimum document frequency for a token to be included in the vocabulary. Can be a float in the range [0.0, 1.0] or an integer. Defaults to 1 (i.e., no filtering).
-            max_features (int or None, optional): The maximum number of features (tokens) to include in the vocabulary. Defaults to None (i.e., no limit).
+            lowercase (bool, optional): Whether to convert all characters to lowercase before tokenization.
+                Defaults to True.
+            stop_words (str, List[str], or None, optional): The stop words to use for filtering tokens.
+                Defaults to None.
+            ngram_range (tuple, optional): The range of n-grams to extract as features.
+                Defaults to (1, 1) (i.e., only unigrams).
+            max_df (float or int, optional): The maximum document frequency for
+                a token to be included in the vocabulary.
+                Can be a float in the range [0.0, 1.0] or an integer. Defaults to 1.0 (i.e., no filtering).
+            min_df (float or int, optional): The minimum document frequency for
+                a token to be included in the vocabulary.
+                Can be a float in the range [0.0, 1.0] or an integer. Defaults to 1 (i.e., no filtering).
+            max_features (int or None, optional): The maximum number of features (tokens)
+                to include in the vocabulary.
+                Defaults to None (i.e., no limit).
             norm (str, optional): The normalization method for tf-idf vectors. Defaults to "l2".
             use_idf (bool, optional): Whether to use inverse document frequency in tf-idf computation. Defaults to True.
             smooth_idf (bool, optional): Whether to smooth idf weights. Defaults to True.
