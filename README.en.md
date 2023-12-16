@@ -141,7 +141,7 @@ by providing text to a unified API interface for each function like Scikit-learn
 
 ## License
 
-`sumire` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+sumire is distributed under the terms of the Apache-2.0 license.
 
 
 ## Acknowledgements (Dependent libraries, data, and models.)
