@@ -26,20 +26,16 @@ dependencies = [
     "loguru",
     "inflection",
     "pyknp >=0.4",
-
     "sudachipy >=0.2",
     "sudachidict_full",
-
     "mecab-python3",
     "unidic",
     "unidic-lite",
     "ipadic",
-
     "ginza >=3",
     "ja-ginza >=3",
     "sentencepiece >=0.1.90",
     "scikit-learn >=0.17",
-
     "gensim",
     "torch",
     "transformers",
@@ -55,6 +51,16 @@ Source = "https://github.com/unknown/sumire"
 
 [tool.hatch.version]
 path = "sumire/__about__.py"
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    "/.github",
+    "/data",
+    "/docs",
+    "/scripts"
+]
+
+
 
 [tool.hatch.envs.default]
 dependencies = [

@@ -28,7 +28,7 @@ class TransformerEmbeddingVectorizer(TransformersVectorizerBase):
     TransformerEmbeddingVectorizer is a vectorizer class that uses
         transformer-based embeddings (e.g., BERT) for text data.
 
-    Tested model infomations are in /sumire/resources/model_card/transformers.
+    Tested model infomations are in `/sumire/resources/model_card/transformers`.
 
     Args:
         pretrained_model_name_or_path (str, optional): The pretrained model name or path.

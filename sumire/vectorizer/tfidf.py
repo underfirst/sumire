@@ -11,6 +11,7 @@ from sumire.vectorizer.base.sklearn_vectorizer_base import SkLearnVectorizerBase
 class TfidfVectorizer(SkLearnVectorizerBase):
     """
     TfidfVectorizer is a vectorizer class that uses TfIdf implemented in scikit-learn.
+    This module wrap japanese text tokenization before inputs scikit-learn TfidfVectorizer.
 
     Args:
         tokenizer: The tokenizer to use for tokenization.
