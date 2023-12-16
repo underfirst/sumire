@@ -61,7 +61,8 @@ dependencies = [
     "coverage[toml]>=6.5",
     "pytest",
     "sphinx",
-    "sphinx-rtd-theme"
+    "sphinx-rtd-theme",
+    "pytest-cov"
 ]
 [tool.hatch.envs.default.scripts]
 test = "pytest {args:tests}"
