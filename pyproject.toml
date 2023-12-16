@@ -59,7 +59,15 @@ exclude = [
     "/docs",
     "/scripts"
 ]
-
+packages = ["sumire/"]
+[tool.hatch.build.targets.wheel]
+exclude = [
+    "/.github",
+    "/data",
+    "/docs",
+    "/scripts"
+]
+packages = ["sumire/"]
 
 
 [tool.hatch.envs.default]
