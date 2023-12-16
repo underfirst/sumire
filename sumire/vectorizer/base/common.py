@@ -159,7 +159,8 @@ class GetTokenVectorsMixIn:
             texts (TokenizerInputs): The input text or a list of texts to tokenize.
 
         Returns:
-            EncodeTokensOutputs: Each internal list consists of a tuple of tokenized words and their vector representations.
+            EncodeTokensOutputs: Each internal list consists of
+                a tuple of tokenized words and their vector representations.
 
         Raises:
             NotImplementedError: This method must be implemented in derived classes.

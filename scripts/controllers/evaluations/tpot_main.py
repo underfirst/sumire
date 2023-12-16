@@ -10,7 +10,7 @@ from tpot import TPOTClassifier
 
 from scripts.data.jglue_data_loader import JGLUEDataLoader
 from sumire.tokenizer import MecabTokenizer
-from sumire.vectorizer import CountVectorizer, TfidfVectorizer, W2VSWEMVectorizer, TransformerEmbeddingVectorizer
+from sumire.vectorizer import CountVectorizer, TfidfVectorizer, TransformerEmbeddingVectorizer, W2VSWEMVectorizer
 
 classifier_config_dict = {
     # Classifiers
@@ -62,11 +62,11 @@ classifier_config_dict = {
 
 def valid_json_exists(json_path: Path) -> bool:
     if json_path.exists():
-        with open(json_path, "r") as f:
+        with open(json_path) as f:
             try:
                 json.load(f)
                 return True
-            except:
+            except json.JSONDecodeError:
                 pass
     return False
 

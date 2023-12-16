@@ -51,8 +51,8 @@ class AutoJapaneseTokenizer(BaseTokenizer):
             >>> tokenizer = AutoJapaneseTokenizer()
             >>> text = texts = ["これはテスト文です。", "別のテキストもトークン化します。"]
             >>> tokens = tokenizer.tokenize(text)
-            >>> tokens
-            [['これ', 'は', 'テスト', '文', 'です', '。'], ['別', 'の', 'テキスト', 'も', 'トークン', '化', 'し', 'ます', '。']]
+            >>> tokens[0]
+            ['これ', 'は', 'テスト', '文', 'です', '。']
         """
     def __init__(self, path: Optional[str] = None, *args, **kwargs):
         super().__init__()

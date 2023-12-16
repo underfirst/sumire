@@ -3,12 +3,19 @@ from tempfile import TemporaryDirectory
 
 from loguru import logger
 
-from sumire.tokenizer import BaseTokenizer, MecabTokenizer, JumanppTokenizer, SpacyGinzaTokenizer, SudachiTokenizer, \
-    AutoJapaneseTokenizer, SentencePieceTokenizer
+from sumire.tokenizer import (
+    AutoJapaneseTokenizer,
+    BaseTokenizer,
+    JumanppTokenizer,
+    MecabTokenizer,
+    SentencePieceTokenizer,
+    SpacyGinzaTokenizer,
+    SudachiTokenizer,
+)
 
 TEST_DATA_DIR = Path(__file__).parent.parent.parent / "data/test/test.txt"
 
-test_lines = [line for line in open(TEST_DATA_DIR).readlines()]
+test_lines = list(open(TEST_DATA_DIR).readlines())
 
 
 def _test_tokenizer(tokenizer: BaseTokenizer, head: int = -1):

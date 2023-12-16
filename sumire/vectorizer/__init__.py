@@ -1,4 +1,4 @@
-from sumire.vectorizer.count import CountVectorizer
-from sumire.vectorizer.tfidf import TfidfVectorizer
-from sumire.vectorizer.swem import W2VSWEMVectorizer
-from sumire.vectorizer.transformer_emb import TransformerEmbeddingVectorizer
+from sumire.vectorizer.count import CountVectorizer  # noqa
+from sumire.vectorizer.swem import W2VSWEMVectorizer  # noqa
+from sumire.vectorizer.tfidf import TfidfVectorizer  # noqa
+from sumire.vectorizer.transformer_emb import TransformerEmbeddingVectorizer  # noqa

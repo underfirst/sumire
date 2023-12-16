@@ -1,8 +1,8 @@
 from typing import Tuple
 
-from loguru import logger
 import numpy as np
 from datasets import load_dataset
+from loguru import logger
 
 from sumire.vectorizer.base.common import BaseVectorizer
 

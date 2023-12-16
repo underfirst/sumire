@@ -25,17 +25,23 @@ for json_file in (Path(__file__).parent.parent / "resources/model_card/transform
 
 class TransformerEmbeddingVectorizer(TransformersVectorizerBase):
     """
-    TransformerEmbeddingVectorizer is a vectorizer class that uses transformer-based embeddings (e.g., BERT) for text data.
+    TransformerEmbeddingVectorizer is a vectorizer class that uses
+        transformer-based embeddings (e.g., BERT) for text data.
 
     Tested model infomations are in /sumire/resources/model_card/transformers.
 
     Args:
-        pretrained_model_name_or_path (str, optional): The pretrained model name or path. Default is "cl-tohoku/bert-base-japanese-v3".
-        pooling_method (str, optional): The pooling method for aggregating embeddings ("cls", "mean", "max"). Default is "cls".
+        pretrained_model_name_or_path (str, optional): The pretrained model name or path.
+            Default is "cl-tohoku/bert-base-japanese-v3".
+        pooling_method (str, optional): The pooling method for
+            aggregating embeddings ("cls", "mean", "max"). Default is "cls".
         batch_size (int, optional): The batch size for processing texts. Default is 32.
-        max_length (int, optional): The maximum length of input sequences. If not provided, it is determined by the model's configuration.
-        model (PreTrainedModel, optional): A pretrained transformer model. If not provided, it is loaded from the specified model name or path.
-        tokenizer (PreTrainedTokenizer, optional): A pretrained tokenizer. If not provided, it is loaded from the specified model name or path.
+        max_length (int, optional): The maximum length of input sequences.
+            If not provided, it is determined by the model's configuration.
+        model (PreTrainedModel, optional): A pretrained transformer model.
+            If not provided, it is loaded from the specified model name or path.
+        tokenizer (PreTrainedTokenizer, optional): A pretrained tokenizer.
+            If not provided, it is loaded from the specified model name or path.
 
     Examples:
         >>> from sumire.vectorizer.transformer_emb import TransformerEmbeddingVectorizer
@@ -60,12 +66,18 @@ class TransformerEmbeddingVectorizer(TransformersVectorizerBase):
         Initialize a TransformerEmbeddingVectorizer.
 
         Args:
-            pretrained_model_name_or_path (str, optional): The pretrained model name or path. Default is "cl-tohoku/bert-base-japanese-v3".
-            pooling_method (str, optional): The pooling method for aggregating embeddings ("cls", "mean", "max"). Default is "cls".
-            batch_size (int, optional): The batch size for processing texts. Default is 32.
-            max_length (int, optional): The maximum length of input sequences. If not provided, it is determined by the model's configuration.
-            model (PreTrainedModel, optional): A pretrained transformer model. If not provided, it is loaded from the specified model name or path.
-            tokenizer (PreTrainedTokenizer, optional): A pretrained tokenizer. If not provided, it is loaded from the specified model name or path.
+            pretrained_model_name_or_path (str, optional): The pretrained model name or path.
+                Default is "cl-tohoku/bert-base-japanese-v3".
+            pooling_method (str, optional): The pooling method for
+                aggregating embeddings ("cls", "mean", "max"). Default is "cls".
+            batch_size (int, optional): The batch size for processing texts.
+                Default is 32.
+            max_length (int, optional): The maximum length of input sequences.
+                If not provided, it is determined by the model's configuration.
+            model (PreTrainedModel, optional): A pretrained transformer model.
+                If not provided, it is loaded from the specified model name or path.
+            tokenizer (PreTrainedTokenizer, optional): A pretrained tokenizer.
+                If not provided, it is loaded from the specified model name or path.
 
         """
         super().__init__()
@@ -151,20 +163,21 @@ class TransformerEmbeddingVectorizer(TransformersVectorizerBase):
             texts (TokenizerInputs): The input text or a list of texts to tokenize.
 
         Returns:
-            EncodeTokensOutputs: Each internal list consists of a tuple of tokenized words and their vector representations.
+            EncodeTokensOutputs: Each internal list consists of a tuple of
+                tokenized words and their vector representations.
 
         Examples:
-        >>> import numpy as np
-        >>> from sumire.vectorizer.transformer_emb import TransformerEmbeddingVectorizer
-        >>> vectorizer = TransformerEmbeddingVectorizer()
-        >>> texts = ["これはテスト文です。", "別のテキストもトークン化します。"]
-        >>> vectors = vectorizer.get_token_vectors(texts)
-        >>> len(vectors)
-        2
-        >>> isinstance(vectors[0][0][0], str)
-        True
-        >>> vectors[0][0][1].shape == (768, )
-        True
+            >>> import numpy as np
+            >>> from sumire.vectorizer.transformer_emb import TransformerEmbeddingVectorizer
+            >>> vectorizer = TransformerEmbeddingVectorizer()
+            >>> texts = ["これはテスト文です。", "別のテキストもトークン化します。"]
+            >>> vectors = vectorizer.get_token_vectors(texts)
+            >>> len(vectors)
+            2
+            >>> isinstance(vectors[0][0][0], str)
+            True
+            >>> vectors[0][0][1].shape == (768, )
+            True
         """
         ret = []
         with torch.no_grad():

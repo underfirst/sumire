@@ -7,7 +7,7 @@ from sumire.vectorizer.base.common import BaseVectorizer
 
 TEST_DATA_DIR = Path(__file__).parent.parent.parent / "data/test/test.txt"
 
-test_lines = [line for line in open(TEST_DATA_DIR).readlines()]
+test_lines = list(open(TEST_DATA_DIR).readlines())
 
 
 def _test_vectorizer(vectorizer: BaseVectorizer, head: int = -1):

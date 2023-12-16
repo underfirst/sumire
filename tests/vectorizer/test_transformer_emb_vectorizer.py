@@ -1,6 +1,6 @@
 import pytest
 
-from sumire.vectorizer.transformer_emb import TransformerEmbeddingVectorizer, TRANSFORMERS_MODEL_CARDS, ModelCard
+from sumire.vectorizer.transformer_emb import TRANSFORMERS_MODEL_CARDS, ModelCard, TransformerEmbeddingVectorizer
 from tests.vectorizer._test_get_token_vectors import _test_get_token_vectors
 from tests.vectorizer._test_vectorizer import _test_vectorizer
 

@@ -23,8 +23,8 @@ class SudachiTokenizer(BaseTokenizer):
         >>> tokenizer = SudachiTokenizer()
         >>> text = texts = ["これはテスト文です。", "別のテキストもトークン化します。"]
         >>> tokens = tokenizer.tokenize(text)
-        >>> tokens
-        [['これ', 'は', 'テスト', '文', 'です', '。'], ['別', 'の', 'テキスト', 'も', 'トークン', '化', 'し', 'ます', '。']]
+        >>> tokens[0]
+        ['これ', 'は', 'テスト', '文', 'です', '。']
     """
 
     def __init__(self, dict_type: str = "full", normalize: bool = False, *args, **kwargs):
@@ -50,8 +50,8 @@ class SudachiTokenizer(BaseTokenizer):
             >>> tokenizer = SudachiTokenizer()
             >>> text = texts = ["これはテスト文です。", "別のテキストもトークン化します。"]
             >>> tokens = tokenizer.tokenize(text)
-            >>> tokens
-            [['これ', 'は', 'テスト', '文', 'です', '。'], ['別', 'の', 'テキスト', 'も', 'トークン', '化', 'し', 'ます', '。']]
+            >>> tokens[0]
+            ['これ', 'は', 'テスト', '文', 'です', '。']
         """
         if isinstance(inputs, str):
             inputs = [inputs]

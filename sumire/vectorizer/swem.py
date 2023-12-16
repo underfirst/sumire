@@ -37,18 +37,27 @@ class W2VSWEMVectorizer(BaseVectorizer):
     """
     W2VSWEMVectorizer is a vectorizer class that uses Word2Vec-based embeddings for text data.
 
-    To use chive model, give model_name_or_path to "chive-{version}-mc{min count}" such as `W2VSWEMVectorizer("chive-1.0-mc5")`.
+    To use chive model, give model_name_or_path to
+    "chive-{version}-mc{min count}" such as `W2VSWEMVectorizer("chive-1.0-mc5")`.
     The model alias name are the "name" key in "sumire/resource/model_card/gensim/chive/*.json".
 
-    To use cl-tohoku japanese wikipedia entity vectors, give model_name_or_path to "{releas date}/jawiki.{all|entity|word}_vectors.{dimension}d" such as `W2VSWEMVectorizer("20180402/jawiki.entity_vectors.100d.json")`
-    The model alias name are the "name" key of "sumire/resource/model_card/gensim/cl-tohoku_jawiki_vector/**/*.json".
+    To use cl-tohoku japanese wikipedia entity vectors,
+    give model_name_or_path to "{releas date}/jawiki.{all|entity|word}_vectors.{dimension}d"
+    such as `W2VSWEMVectorizer("20180402/jawiki.entity_vectors.100d.json")`
+    The model alias name are the "name" key of
+    "sumire/resource/model_card/gensim/cl-tohoku_jawiki_vector/**/*.json".
 
 
     Args:
-        model_name_or_path (str, optional): The model name or path to Word2Vec embeddings. Default is "20190520/jawiki.word_vectors.100d". The alias names are in name key of `resources/model_card/gensim/**/*.json`
-        pooling_method (str, optional): The pooling method for aggregating word vectors ("mean" or "max"). Default is "mean".
-        download_timeout (int, optional): The timeout for downloading embeddings. Default is 3600.
-        tokenizer (BaseTokenizer, optional): The tokenizer to use. If not provided, a default MecabTokenizer is used.
+        model_name_or_path (str, optional): The model name or path to Word2Vec embeddings.
+            Default is "20190520/jawiki.word_vectors.100d".
+                The alias names are in name key of `resources/model_card/gensim/**/*.json`
+        pooling_method (str, optional): The pooling method for
+            aggregating word vectors ("mean" or "max"). Default is "mean".
+        download_timeout (int, optional): The timeout for downloading embeddings.
+            Default is 3600.
+        tokenizer (BaseTokenizer, optional): The tokenizer to use.
+            If not provided, a default MecabTokenizer is used.
 
     Attributes:
         w2v_dir (Path): The directory for storing Word2Vec embeddings.
@@ -209,7 +218,8 @@ class W2VSWEMVectorizer(BaseVectorizer):
             texts (TokenizerInputs): The input text or a list of texts to tokenize.
 
         Returns:
-            EncodeTokensOutputs: Each internal list consists of a tuple of tokenized words and their vector representations.
+            EncodeTokensOutputs: Each internal list consists of
+                a tuple of tokenized words and their vector representations.
 
 
         Example:
