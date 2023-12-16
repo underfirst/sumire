@@ -6,7 +6,9 @@ Scikit-learn互換の日本語の単語分割器と, テキストのベクトル
 
 [![PyPI - Version](https://img.shields.io/pypi/v/sumire.svg)](https://pypi.org/project/sumire)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/sumire.svg)](https://pypi.org/project/sumire)
-![Pytest](https://github.com/reiven-c-t/sumire/actions/workflows/python-app.yml/badge.svg)
+![Lint](https://github.com/reiven-c-t/sumire/actions/workflows/python-lint.yml/badge.svg)
+![Test](https://github.com/reiven-c-t/sumire/actions/workflows/python-test.yml/badge.svg)
+![Coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/reiven-c-t/4300c0ff006aab09e6733925efbbf517/raw/3316d071e93ee9de175dc83086870cbd082c0b65/gistfile1.txt)(https://github.com/reiven-c-t/sumire/actions/workflows/python-test.yml)
 
 -----
 
