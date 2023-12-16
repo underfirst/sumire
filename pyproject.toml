@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "sumire"
 dynamic = ["version"]
-description = 'Scikit-compatible Japanese text vectorizer for CPU-based Japanese natural language processing.'
+description = 'Scikit-learn compatible Japanese text vectorizer for CPU-based Japanese natural language processing.'
 readme = "README.md"
 requires-python = ">=3.9"
 license = "MIT"
