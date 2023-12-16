@@ -37,7 +37,7 @@ Scikit-learn互換の日本語の単語分割器と, テキストのベクトル
 - cmake
 - git 
 
-MeCab-IPAdic-Neologdや, MeCab-Unidic-Neologdを使う場合, もしかしたらgitアカウントにログインが必要かもしれません (TODO: テスト).
+<!--TODO: test. MeCab-IPAdic-Neologdや, MeCab-Unidic-Neologdを使う場合, もしかしたらgitアカウントにログインが必要かもしれない. -->
 
 ```shell
 # Jumanpp dependencies.
@@ -103,30 +103,30 @@ bert_cls_vectorizer = TransformerEmbeddingVectorizer.from_pretrained("path/to/be
 
 ## Development background
 
-LLMの隆盛に伴い, 検索, 感情分析, その他テキスト分類・回帰などの日本語のNLPの実用タスクへの注目も高まりつつある.
-これらの基本的なタスクにおいて, 日本語のテキストを単語分割や, 単語や文の分散表現を得ることは, 最も基礎的な処理の一つである.
-LLMの時代において, 事前訓練済みTransformerモデルのチューニングや, Open AI APIによるEmbeddingsは,
-テキスト分散表現技術において最も重要な技術であることはいうまでもなく, また, 簡単に実装できるといえば実装できる. 
+LLMの隆盛に伴い, 検索, 感情分析, その他テキスト分類・回帰などの日本語のNLPの実用タスクへの注目も高まりつつあります.
+これらの基本的なタスクにおいて, 日本語のテキストを単語分割や, 単語や文の分散表現を得ることは, 最も基礎的な処理の一つです.
+LLMの時代において, BERTなどの事前訓練済みTransformerモデルや, Open AI APIによるEmbeddingsは,
+テキスト分散表現技術において最も重要な技術であることはいうまでもなく, また, 簡単に実装できるといえば実装できます. 
 
 しかし, 実用の現場において, BERTや, OpenAI APIなどの, 
-高価なGPUが必要な手法や, 1 Queryごとに費用が発生するAPIを用いた最先端の手法を使うことは, 計算量・運用コストの両面から負荷が高い.
+高価なGPUが必要な手法や, 1 Queryごとに費用が発生するAPIを用いた最先端の手法を使うことは, 計算量・運用コストの両面から負荷が軽いとはいえません.
 また, データセット構築段階などのプロジェクトの初期段階での概念実証 (PoC) において, 
 辞書データや形態素解析器の~~めんどくさい~~インストール作業や,
-それぞれやや異なるAPIのメソッドやプロパティを調べながら作業を行うのは少しばかり手間である.
+それぞれやや異なるAPIのメソッドやプロパティを調べながら作業を行うのは少しばかり手間です.
 
 これらの点を踏まえて, GPUがあるとは限らない手元環境で, 
 PoCにおけるモデリング・分析部分へ速やかに注力できように,
 Scikit-learnのように, 機能ごとに統一的なAPIインターフェースで, 
-テキストを与えればとりあえず色々な文の分散表現を取得できるライブラリを開発した.
+テキストを与えればとりあえず色々な文の分散表現を取得できるライブラリを開発しました.
 
 #### Unmotivated development tasks (at this moment.)
 
 - Open-AI Embedding modelを使うこと. (高い.)
 - 事前訓練済みTransformerモデルによるEmbeddingについて, GPUが必要なチューニング機能を実装すること. (手元にGPUがない.)
 - 実行速度のためにライブラリ内部の可読性を大きく下げること. 
-  - 小規模なPoCにおいて, コードの実行速度より, 実装速度のほうが重要である.
+  - 小規模なPoCにおいて, コードの実行速度より, 実装速度のほうが重要だと考えています.
   - PoC後の大規模な運用にて, 速度やディスク容量が問題になった場合があれば, 
-    本ライブラリ中の不要な処理をそれぞれの開発者が削除したりカスタマイズしやすいように, 可読性を維持することが望ましい.
+    本ライブラリ中の不要な処理をそれぞれの開発者が削除したりカスタマイズしやすいように, 可読性を維持したいです.
 
 
 #### Roadmap (motivated development tasks)
@@ -141,7 +141,7 @@ Scikit-learnのように, 機能ごとに統一的なAPIインターフェース
 
 ## License
 
-`sumire` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+`sumire` is distributed under the terms of the  Apache-2.0 license.
 
 
 ## Acknowledgements (Dependent libraries, data, and models.)
