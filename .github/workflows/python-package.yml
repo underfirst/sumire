@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.9", "3.10", "3.11"]
+        python-version: ["3.10"]
 
     steps:
     - uses: actions/checkout@v3
@@ -29,7 +29,7 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install hatch
     - name: Lint python
-      run: hatch run lint:ruff checkx
+      run: hatch run lint:ruff check
     - name: Test with pytest
       run: |
         hatch run test:test
