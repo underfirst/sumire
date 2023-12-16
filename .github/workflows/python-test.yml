@@ -28,22 +28,6 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         python -m pip install hatch
-    - name: Build coverage file
+    - name: test
       run: |
-          hatch run pytest --junitxml=pytest.xml --cov-report=term-missing:skip-covered --cov=sumire/ tests/ | tee pytest-coverage.txt
-    - name: Pytest coverage comment
-      uses: MishaKav/pytest-coverage-comment@main
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        pytest-coverage-path: ./pytest-coverage.txt
-        junitxml-path: ./pytest.xml
-    - name: Create Coverage Badge
-      uses: schneegans/dynamic-badges-action@v1.3.0
-      with:
-        auth: ${{ secrets.BADGE_GIST }}
-        gistID: 4300c0ff006aab09e6733925efbbf517
-        filename: pytest-coverage-comment.json
-        label: Coverage
-        message: ${{ steps.coverageComment.outputs.coverage }}
-        color: ${{ steps.coverageComment.outputs.color }}
-        namedLogo: python
+          hatch run test
