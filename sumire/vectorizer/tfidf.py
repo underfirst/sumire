@@ -9,6 +9,43 @@ from sumire.vectorizer.base.sklearn_vectorizer_base import SkLearnVectorizerBase
 
 
 class TfidfVectorizer(SkLearnVectorizerBase):
+    """
+    TfidfVectorizer is a vectorizer class that uses TfIdf implemented in scikit-learn.
+
+    Args:
+        tokenizer: The tokenizer to use for tokenization.
+        lowercase (bool, optional): Whether to convert all characters to lowercase before tokenization.
+            Defaults to True.
+        stop_words (str, List[str], or None, optional): The stop words to use for filtering tokens.
+            Defaults to None.
+        ngram_range (tuple, optional): The range of n-grams to extract as features.
+            Defaults to (1, 1) (i.e., only unigrams).
+        max_df (float or int, optional): The maximum document frequency for
+            a token to be included in the vocabulary.
+            Can be a float in the range [0.0, 1.0] or an integer. Defaults to 1.0 (i.e., no filtering).
+        min_df (float or int, optional): The minimum document frequency for
+            a token to be included in the vocabulary.
+            Can be a float in the range [0.0, 1.0] or an integer. Defaults to 1 (i.e., no filtering).
+        max_features (int or None, optional): The maximum number of features (tokens)
+            to include in the vocabulary.
+            Defaults to None (i.e., no limit).
+        norm (str, optional): The normalization method for tf-idf vectors. Defaults to "l2".
+        use_idf (bool, optional): Whether to use inverse document frequency in tf-idf computation. Defaults to True.
+        smooth_idf (bool, optional): Whether to smooth idf weights. Defaults to True.
+            sublinear_tf (bool, optional): Whether to apply sublinear tf scaling. Defaults to False.
+
+    Returns:
+        None
+
+    Example:
+        >>> from sumire.tokenizer import MecabTokenizer
+        >>> texts = ["これはテスト文です。", "別のテキストもトークン化します。"]
+        >>> tokenizer = MecabTokenizer()
+        >>> vectorizer = TfidfVectorizer(tokenizer=tokenizer)
+        >>> vectorizer.fit(texts)
+        >>> transformed = vectorizer.transform(texts)
+    """
+
     def __init__(
             self,
             tokenizer: Union[str, TokenizerType] = "mecab",
@@ -24,42 +61,6 @@ class TfidfVectorizer(SkLearnVectorizerBase):
             sublinear_tf: bool = False,
             *args, **kwargs,
     ):
-        """
-        Initializes a TfidfVectorizer instance.
-
-        Args:
-            tokenizer: The tokenizer to use for tokenization.
-            lowercase (bool, optional): Whether to convert all characters to lowercase before tokenization.
-                Defaults to True.
-            stop_words (str, List[str], or None, optional): The stop words to use for filtering tokens.
-                Defaults to None.
-            ngram_range (tuple, optional): The range of n-grams to extract as features.
-                Defaults to (1, 1) (i.e., only unigrams).
-            max_df (float or int, optional): The maximum document frequency for
-                a token to be included in the vocabulary.
-                Can be a float in the range [0.0, 1.0] or an integer. Defaults to 1.0 (i.e., no filtering).
-            min_df (float or int, optional): The minimum document frequency for
-                a token to be included in the vocabulary.
-                Can be a float in the range [0.0, 1.0] or an integer. Defaults to 1 (i.e., no filtering).
-            max_features (int or None, optional): The maximum number of features (tokens)
-                to include in the vocabulary.
-                Defaults to None (i.e., no limit).
-            norm (str, optional): The normalization method for tf-idf vectors. Defaults to "l2".
-            use_idf (bool, optional): Whether to use inverse document frequency in tf-idf computation. Defaults to True.
-            smooth_idf (bool, optional): Whether to smooth idf weights. Defaults to True.
-            sublinear_tf (bool, optional): Whether to apply sublinear tf scaling. Defaults to False.
-
-        Returns:
-            None
-
-        Example:
-            >>> from sumire.tokenizer import MecabTokenizer
-            >>> texts = ["これはテスト文です。", "別のテキストもトークン化します。"]
-            >>> tokenizer = MecabTokenizer()
-            >>> vectorizer = TfidfVectorizer(tokenizer=tokenizer)
-            >>> vectorizer.fit(texts)
-            >>> transformed = vectorizer.transform(texts)
-        """
         super().__init__()
         if isinstance(tokenizer, str):
             tokenizer = AutoJapaneseTokenizer.from_pretrained(tokenizer)
