@@ -223,16 +223,16 @@ class W2VSWEMVectorizer(BaseVectorizer):
 
 
         Example:
-        >>> from sumire.vectorizer.swem import W2VSWEMVectorizer
-        >>> vectorizer = W2VSWEMVectorizer()
-        >>> texts = ["これはテスト文です。", "別のテキストもトークン化します。"]
-        >>> vectors = vectorizer.get_token_vectors(texts)
-        >>> len(vectors)
-        2
-        >>> isinstance(vectors[0][0][0], str)
-        True
-        >>> vectors[0][0][1].shape == (100, )
-        True
+            >>> from sumire.vectorizer.swem import W2VSWEMVectorizer
+            >>> vectorizer = W2VSWEMVectorizer()
+            >>> texts = ["これはテスト文です。", "別のテキストもトークン化します。"]
+            >>> vectors = vectorizer.get_token_vectors(texts)
+            >>> len(vectors)
+            2
+            >>> isinstance(vectors[0][0][0], str)
+            True
+            >>> vectors[0][0][1].shape == (100, )
+            True
         """
         ret = []
         for tokens in self.tokenize(texts):

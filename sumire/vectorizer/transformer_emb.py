@@ -110,12 +110,12 @@ class TransformerEmbeddingVectorizer(TransformersVectorizerBase):
             np.array: Transformed embeddings.
 
         Examples:
-        >>> from sumire.vectorizer.transformer_emb import TransformerEmbeddingVectorizer
-        >>> vectorizer = TransformerEmbeddingVectorizer()
-        >>> texts = ["This is a sample sentence.", "Another example."]
-        >>> vectors = vectorizer.transform(texts)
-        >>> vectors.shape
-        (2, 768)  # Assuming a BERT model with 768-dimensional embeddings
+            >>> from sumire.vectorizer.transformer_emb import TransformerEmbeddingVectorizer
+            >>> vectorizer = TransformerEmbeddingVectorizer()
+            >>> texts = ["This is a sample sentence.", "Another example."]
+            >>> vectors = vectorizer.transform(texts)
+            >>> vectors.shape
+            (2, 768)  # Assuming a BERT model with 768-dimensional embeddings
         """
         ret = []
         for batch in [texts[i:i + self.batch_size] for i in range(0, len(texts), self.batch_size)]:
