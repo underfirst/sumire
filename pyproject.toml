@@ -36,7 +36,7 @@ dependencies = [
     "ja-ginza >=3",
     "sentencepiece >=0.1.90",
     "scikit-learn >=0.17",
-    "gensim",
+    "gensim >=4.2",
     "torch",
     "transformers",
     "protobuf",
@@ -45,9 +45,9 @@ dependencies = [
 
 
 [project.urls]
-Documentation = "https://github.com/unknown/sumire#readme"
-Issues = "https://github.com/unknown/sumire/issues"
-Source = "https://github.com/unknown/sumire"
+Documentation = "https://reiven-c-t.github.io/sumire/"
+Issues = "https://github.com/reiven-c-t/sumire/issues"
+Source = "https://github.com/reiven-c-t/sumire"
 
 [tool.hatch.version]
 path = "sumire/__about__.py"
