@@ -9,10 +9,13 @@ on:
   pull_request:
     branches: [ "main" ]
 
+
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
     strategy:
       fail-fast: false
       matrix:
