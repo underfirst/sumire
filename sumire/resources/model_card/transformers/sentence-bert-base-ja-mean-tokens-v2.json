@@ -1,0 +1,4 @@
+{
+  "model_name": "sonoisa/sentence-bert-base-ja-mean-tokens-v2",
+  "description": "Sentence-BERT model. TransformerEmbeddingVector(\"sonoisa/sentence-bert-base-ja-mean-tokens-v2\", \"mean\") is as same as common Sentence-BERT usage."
+}

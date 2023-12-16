@@ -1,0 +1,6 @@
+{
+  "name": "20190520/jawiki.all_vectors.300d",
+  "url": "https://github.com/singletongue/WikiEntVec/releases/download/20190520/jawiki.all_vectors.300d.txt.bz2",
+  "tokenizer_name": "mecab-ipadic-neologd",
+  "description": "Japanese wikipedia entity vector from cl-tohoku. See <https://www.cl.ecei.tohoku.ac.jp/~m-suzuki/jawiki_vector/>.\n<https://github.com/singletongue/WikiEntVec>"
+}

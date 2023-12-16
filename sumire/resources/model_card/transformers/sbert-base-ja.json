@@ -1,0 +1,4 @@
+{
+  "model_name": "colorfulscoop/sbert-base-ja",
+  "description": "Sentence-BERT model. TransformerEmbeddingVector(\"colorfulscoop/sbert-base-ja\", \"mean\") is as same as common Sentence-BERT usage."
+}

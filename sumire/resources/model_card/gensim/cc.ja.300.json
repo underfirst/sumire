@@ -1,0 +1,6 @@
+{
+  "name": "cc.ja.300",
+  "url": "https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.ja.300.vec.gz",
+  "tokenizer_name": "mecab",
+  "description": "fastTest's Japanese common crawl. See <https://fasttext.cc/docs/en/crawl-vectors.html>"
+}

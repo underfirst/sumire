@@ -1,0 +1,6 @@
+{
+  "name": "chive-1.1-mc5",
+  "url": "https://sudachi.s3-ap-northeast-1.amazonaws.com/chive/chive-1.1-mc5_gensim.tar.gz",
+  "tokenizer_name": "sudachi",
+  "description": "chiVe (sudachi normalized word 2 vec) from <https://github.com/WorksApplications/chiVe>."
+}
