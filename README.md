@@ -141,7 +141,7 @@ Scikit-learnのように, 機能ごとに統一的なAPIインターフェース
 
 ## License
 
-`sumire` is distributed under the terms of the  Apache-2.0 license.
+`sumire` is distributed under the terms of the MIT License. 
 
 
 ## Acknowledgements (Dependent libraries, data, and models.)

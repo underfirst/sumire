@@ -11,7 +11,7 @@ requires-python = ">=3.9"
 license = "MIT"
 keywords = ["NLP", "Natural Language Processing", "Scikit-learn", "Japanese", "Tokenizer"]
 authors = [
-    { name = "author", email = "a.k.a.underfirst@mail.com" },
+    { name = "a.k.a.underfirst", email = "a.k.a.underfirst@mail.com" },
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
