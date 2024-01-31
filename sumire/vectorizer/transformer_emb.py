@@ -126,16 +126,17 @@ class TransformerEmbeddingVectorizer(TransformersVectorizerBase):
                                         max_length=self.max_length,
                                         padding="max_length",
                                         truncation=True)
-                for k in inputs.keys():
-                    inputs[k] = inputs[k].to(self.model.device)
+                inputs = {key:value.to(self.model.device) for key, value in inputs.items()}
                 try:
                     outputs = self.model(**inputs, return_dict=True)
                 except TypeError:  # line-distillbert got an unexpected keyword argument 'token_type_ids'.
                     outputs = self.model(inputs["input_ids"], return_dict=True)
-                for k in inputs.keys():
-                    inputs[k] = inputs[k].cpu().detach()
+                    for key in outputs.keys():
+                        if isinstance(outputs[key], torch.Tensor):
+                            outputs[key].cpu().detach()
+                inputs = {key:value.cpu().detach() for key, value in inputs.items()}
                 if self.pooling_method == "cls":
-                    last_hidden_state = outputs.last_hidden_state.cpu().detach()
+                    last_hidden_state = outputs.last_hidden_state
                     cls_token_idx = inputs["input_ids"] == self.tokenizer.cls_token_id
                     if cls_token_idx.sum() == 0:
                         logger.info("No CLS token in the inputs, try using bos_token...")
